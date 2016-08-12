@@ -36,39 +36,10 @@ public class QuestionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	    /*String text = request.getParameter("text");
-		String text1 = request.getParameter("title");*/
+            String text1 = request.getParameter("title");*/
 			
-		/*Enumeration<String> parameterNames = request.getParameterNames();
-		
-		while (parameterNames.hasMoreElements()) {
 
-			String paramName = parameterNames.nextElement();
-			String[] paramValues = request.getParameterValues(paramName);
-			
-			for (int i = 0; i < paramValues.length; i++) {
-				String paramValue = paramValues[i];
-								
-				Question question = new Question();
-				question.setText(paramValue);
-			
-				HttpSession session = request.getSession(true);
-				
-				if(session.getAttribute("qlist")== null){
-					List<Question> list = new ArrayList<>();
-					session.setAttribute("qlist", list);
-				}
-
-				List<Question> list = (List)session.getAttribute("qlist");
-				list.add(question);
-			      
-				request.setAttribute("question", question);
-				getServletContext().getRequestDispatcher("/questionlist.jsp").forward(request, response);
-					
-			}
-
-		}*/
-		
-		response.setContentType("text/html");
+	    response.setContentType("text/html");
 	    PrintWriter out = response.getWriter();
 	    out.println("title     text   score" + "<br/>");
 	    Map  map  = request.getParameterMap();
